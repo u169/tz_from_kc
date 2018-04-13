@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Frontend</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+			  crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="scale">
+
+            <div class="d-flex">
+                <div class="m-row d-flex">
+                    <label for="">Наименование</label>
+                    <div class="">
+                        <p id="name" class="m-0"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <div class="m-row d-flex">
+                    <label for="">Фамилия</label>
+                    <div class="d-flex">
+                        <input class="m-input person" type="text">
+                        <button class="btn bg-light p-0 text-center" type="button" onclick="addNext(this)">
+                            Ru
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex hidden">
+                <div class="m-row d-flex">
+                    <label for="" class="unvisible">Фамилия</label>
+                    <div class="d-flex">
+                        <input class="m-input" type="text">
+                        <button class="btn bg-light p-0 text-center" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ru
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">Ru</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">En</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">Fr</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">De</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">...</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <div class="m-row d-flex">
+                    <label for="">Имя</label>
+                    <div class="d-flex">
+                        <input  class="m-input person" type="text">
+                        <button class="btn btn-add bg-light p-0 text-center" type="button" onclick="addNext(this)">
+                            Ru
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex hidden">
+                <div class="m-row d-flex">
+                    <label for="" class="unvisible">Имя</label>
+                    <div class="d-flex">
+                        <input class="m-input" type="text">
+                        <button class="btn bg-light p-0 text-center" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ru
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">Ru</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">En</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">Fr </a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">De </a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">...</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <div class="m-row d-flex">
+                    <label for="">Отчество</label>
+                    <div class="d-flex">
+                        <input class="m-input person" type="text">
+                        <button class="btn btn-add bg-light p-0 text-center" type="button" onclick="addNext(this)">
+                            Ru
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex hidden">
+                <div class="m-row d-flex">
+                    <label for="" class="unvisible">Отчество</label>
+                    <div class="d-flex">
+                        <input class="m-input" type="text">
+                        <button class="btn bg-light p-0 text-center" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ru
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">Ru</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">En</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">Fr </a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">De </a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">...</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <label for="">Дата рождения</label>
+                <div class="d-flex">
+                    <input  class="m-input" type="date">
+                    <button class="hidden">b</button>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <div class="m-row d-flex">
+                    <label for="">Место рождения</label>
+                    <div class="d-flex">
+                        <input class="m-input" type="text">
+                        <button class="btn btn-add bg-light p-0 text-center" type="button" onclick="addNext(this)">
+                            Ru
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex hidden">
+                <div class="m-row d-flex">
+                    <label for="" class="unvisible">Место рождения</label>
+                    <div class="d-flex">
+                        <input class="m-input" type="text">
+                        <button class="btn bg-light dropdown-toggle p-0 text-center" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ru
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">Ru</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">En</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">Fr </a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">De  </a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">...</a>
+                            <a class="dropdown-item" href="#" onclick="changeButText(this)">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <label for="">Фактический адрес</label>
+                <div class="d-flex">
+                    <div class="place-wrapper">
+                        <input class="m-input" id="input-place" type="text">
+                        <div class="go-to"></div>
+                    </div>
+                    <button class="btn add-comment bg-light p-0 text-center" type="button">
+                        &#9733;
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <label for="">Удостоверение личности</label>
+                <div class="d-flex">
+                    <input class="m-input" type="text" placeholder="Добавить новый элемент">
+                    <button class="btn btn-add bg-light p-0 text-center" type="button" onclick="addAnother(this)">
+                        +
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex hidden">
+                <label for="" class=""></label>
+                <div class="d-flex">
+                    <input class="m-input" type="text">
+                    <button class="btn btn-add bg-light p-0 text-center" type="button" onclick="removeAnother(this)">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="scale">
+
+
+            <div class="d-flex">
+                <label for="">Контакты</label>
+                <div class="d-flex">
+                    <input class="m-input" type="text" placeholder="Добавить новый элемент">
+                    <button class="btn btn-add bg-light p-0 text-center" type="button" onclick="addAnother(this)">
+                        +
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex hidden">
+                <label for="" class=""></label>
+                <div class="d-flex">
+                    <input class="m-input" type="text">
+                    <button class="btn btn-add bg-light p-0 text-center" type="button" onclick="removeAnother(this)">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <div class="m-row d-flex">
+                    <label for="">Фото</label>
+                    <div class="d-flex">
+                        <div class="d-flex flex-column">
+                            <img id="photo-img" class="img fluid" src="" alt="Photo" width="200px">
+                            <input id="photo-input" class="m-input " type="file">
+                        </div>
+                        <button class="btn bg-light p-0 text-center" type="button" onclick="rmPhoto(this)">
+                            &times;
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="scale">
+
+
+            <div class="d-flex">
+                <label for="">Класс</label>
+                <div class="d-flex">
+                    <select class="select-box" name="" id="">
+                        <option value="">Физическое лицо</option>
+                    </select>
+                    <button class="btn go-any bg-light p-0 text-center" type="button"">
+                        ...
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <label for="">Дата включения в базу</label>
+                <div class="d-flex">
+                    <input class="m-input" type="date">
+                    <button class="hidden">b</button>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <label for="">Дата исключения из базы</label>
+                <div class="d-flex">
+                    <input class="m-input" class="input-date" type="date" placeholder="">
+                    <button class="hidden">b</button>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <label for="">Регион</label>
+                <div class="d-flex">
+
+                    <select class="select-box" name="" id="">
+                        <option value="">Тестовая группа</option>
+                    </select>
+                    <button class="btn go-any bg-light p-0 text-center" type="button"">
+                        ...
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <script src="main.js"></script>
+</body>
+</html>

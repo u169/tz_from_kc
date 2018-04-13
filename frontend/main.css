@@ -1,0 +1,121 @@
+.go-to {
+    color: inherit;
+}
+
+.go-to:hover {
+    color: #fcbd00;
+    text-decoration: none;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.scale {
+    width: 100%;
+}
+
+.m-row {
+    width: 480px;
+}
+
+.m-input, #name, select, .bbs {
+    width: 250px;
+}
+
+.select-box {
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-image: url("https://www.iconexperience.com/_img/o_collection_png/green_dark_grey/256x256/plain/navigate_close.png");
+
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.btn {
+    overflow: hidden;
+}
+
+button, .lang, .go-to {
+    align-self: start;
+    margin: 4px 3px;
+    background: white;
+    border: 1px solid silver;
+    border-radius: 3px;
+    color: #fcbd00;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    border: 1px solid silver;
+    color: #fcbd00;
+}
+
+.m-input, select {
+    background: inherit;
+    border: 1px solid silver;
+    margin: 2px 0;
+    padding-right: 30px;
+    height: 30px;
+}
+
+label {
+    width: 170px;
+    padding-right: 5px;
+}
+.m-input[type=date] {
+    background-position: right;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-image: url("data:image/png;base64,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");
+    margin-right: 31px;
+}
+
+#input-place {
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqoPiLbeItTxiEHw3IMuOyqxFtOT3BlyCZxiESLuymnpPl6Ve0Pg");
+}
+
+.place-wrapper {
+    position: relative;
+}
+
+.go-to {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0;
+    top: 2px;
+    right: -2px;
+}
+
+.btn {
+    padding: 10px 20px;
+}
+
+
+.hidden {
+    display: none!important;
+}
+
+.unvisible {
+    opacity: 0;
+}
+
+@media only screen and (min-width: 1499px) {
+    .scale {
+        width: 33%;
+    }
+}
