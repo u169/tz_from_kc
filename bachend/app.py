@@ -4,37 +4,41 @@ import inspect
 print("Starting... \n")
 
 
+### TZ decorator
 def decorator_maker(opt):
-
 
     def decorator(function):
 
-        func_args = inspect.getargspec(function).args[1:]
-        default_values = inspect.getargspec(function).defaults
+        def create_temp(*args, **keyargs):
 
-        print(func_args)
-        print(default_values)
+            func_args = inspect.getargspec(function).args[1:]
+            default_values = inspect.getargspec(function).defaults
+            default_values = dict(zip(func_args[-len(default_values):], default_values))
 
-        temp = {}
+            temp = dict(zip(func_args, list(args)))
 
-        def create_temp():
+            for i in keyargs:
+                temp[i] = keyargs[i]
+
             for i in func_args:
-                print(i)
-            print (", ".join(func_args))
+                if i not in temp:
+                    temp[i] = default_values[i]
+
+            return temp.__str__()
 
         def wrapper(self, *args, **keyargs):
 
+            temp = create_temp(*args, **keyargs)
 
-            if (args, keyargs).__str__() in self.__dict__[opt]:
-                print("Get hashed!")
+            if temp in self.__dict__[opt]:
+                print("Gotten from cache:")
             else:
-                create_temp()
-                self.__dict__[opt][(args, keyargs).__str__()] = (function(self, *args, **keyargs))
+                self.__dict__[opt][temp] = (function(self, *args, **keyargs))
 
             try:
-                return self.__dict__[opt][(args, keyargs).__str__()]
+                return self.__dict__[opt][temp]
             except:
-                print("Cashe getting Error")
+                print("Cache getting Error")
 
             return function(self, *args, **keyargs)
 
@@ -52,23 +56,19 @@ class SomeClass:
         return self
 
     @decorator_maker("opt")
-    def count(self, first, second=2):
-        return first + second
+    def count(self, first, second=1, third=2, four=5):
+        res = first + second + third + four
+        return res
 
-# @decorator(hash)
-# def hello():
-#     print('hello')
+
 
 model = SomeClass()
 
-res = model.count(1,2)
+print(model.count(1,2,third=3))
+print(model.count(1,2,third=3)) # cached
+print(model.count(1,second=1))
+print(model.count(1, second=2, third=2, four=1))
+print(model.count(1, second=2, four=1)) #cached
+print(model.count(1,3,3))
 
-res = model.count(1)
-
-res2 = model.count(1, 1)
-
-res2 = model.count(1, 1)
-res = model.count(1,2)
-
-print(model.opt)
-print(model.__module__)
+# print(model.opt)
